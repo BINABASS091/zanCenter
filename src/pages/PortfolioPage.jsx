@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import TopNavigation from '../components/TopNavigation'
 import AchievementCard from '../components/AchievementCard'
-import { Download, Share2, Code2, ExternalLink } from 'lucide-react'
+import { Download, Share2, Code as Code2, ExternalLink } from 'lucide-react'
 import { useGameStore } from '../store/gameStore'
 import { getCourseProgress } from '../data/reactCourse'
 
@@ -63,7 +63,7 @@ export default function PortfolioPage() {
 
   const exportPortfolio = () => {
     const lines = [
-      `${userName}'s Smart Island Portfolio`,
+      `${userName}'s Zanzibar.Center Portfolio`,
       `React Course: ${course.percent}% complete`,
       '',
       'Projects:',
@@ -73,7 +73,7 @@ export default function PortfolioPage() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'smart-island-portfolio.txt'
+    link.download = 'zanzibar-center-portfolio.txt'
     link.click()
     URL.revokeObjectURL(url)
   }

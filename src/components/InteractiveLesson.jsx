@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Play, RefreshCw, Terminal, Award, BookOpen, AlertCircle } from 'lucide-react'
+import { X, Play, RefreshCw, Terminal, Award, BookOpen, CircleAlert as AlertCircle } from 'lucide-react'
 import { useGameStore, useUIStore } from '../store/gameStore'
 
 export default function InteractiveLesson({ isOpen, onClose }) {
@@ -111,7 +111,7 @@ for (let i = 0; i < 3; i++) {
                 <h2 className="text-xl font-bold bg-gradient-to-r from-island-blue to-tropical-green bg-clip-text text-transparent">
                   JavaScript Playground: Loops
                 </h2>
-                <p className="text-xs text-text-secondary">Lesson 2.1 • Smart Island Code Academy</p>
+                <p className="text-xs text-text-secondary">Lesson 2.1 • Zanzibar.Center Code Academy</p>
               </div>
             </div>
             <button

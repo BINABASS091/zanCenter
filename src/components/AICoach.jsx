@@ -44,7 +44,7 @@ export default function AICoach() {
               🤖
             </motion.div>
             <div>
-              <h3 className="font-bold text-island-blue">Island Guide AI</h3>
+              <h3 className="font-bold text-island-blue">Guide AI</h3>
               <p className="text-xs text-text-secondary flex items-center gap-1">
                 {getEmotionEmoji(context.emotion)} Always helping!
               </p>

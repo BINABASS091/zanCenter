@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import TopNavigation from '../components/TopNavigation'
-import { Users, BarChart3, BookCheck, FileText, TrendingUp, Award, Download } from 'lucide-react'
+import { Users, ChartBar as BarChart3, BookCheck, FileText, TrendingUp, Award, Download } from 'lucide-react'
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 
 const classData = [
@@ -36,7 +36,7 @@ export default function TeacherDashboardPage() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'smart-island-teacher-report.csv'
+    link.download = 'zanzibar-center-teacher-report.csv'
     link.click()
     URL.revokeObjectURL(url)
   }

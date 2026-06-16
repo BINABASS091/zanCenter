@@ -273,7 +273,7 @@ export const useGameStore = create(
       }),
     }),
     {
-      name: 'smart-island-progress',
+      name: 'zanzibar-center-progress',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         energy: state.energy,

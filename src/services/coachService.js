@@ -80,5 +80,5 @@ export function getQuickReplyResponse(reply, ageMode) {
     'Portfolio tip': 'Finish Module 7 to publish your personal portfolio website! 📂',
     'Explore zones': 'Open Explore and tap undiscovered zones — hidden rewards await! 🗺️',
   }
-  return responses[reply] || `Keep exploring Smart Island Experience Hub! 🌍`
+  return responses[reply] || `Keep exploring Zanzibar.Center Experience Hub! 🌍`
 }

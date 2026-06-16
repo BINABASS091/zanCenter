@@ -90,7 +90,7 @@ export const LESSON_SNIPPETS = {
     starter: `function Welcome() {
   return (
     <div>
-      <h1>Hello, Smart Island!</h1>
+      <h1>Hello, Zanzibar.Center!</h1>
     </div>
   );
 }`,

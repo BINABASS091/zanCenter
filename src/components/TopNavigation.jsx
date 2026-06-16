@@ -30,7 +30,7 @@ export default function TopNavigation() {
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <span className="text-2xl">🏝️</span>
           <div>
-            <h1 className="text-lg font-bold text-island-blue leading-tight">Smart Island</h1>
+            <h1 className="text-lg font-bold text-island-blue leading-tight">Zanzibar.Center</h1>
             <p className="text-[10px] text-text-secondary">Experience Hub</p>
           </div>
         </Link>
@@ -63,6 +63,16 @@ export default function TopNavigation() {
               <Link to="/teacher" className="block px-4 py-2 text-sm text-text-secondary hover:text-white hover:bg-white/5 transition-all">
                 🍎 Teacher Portal
               </Link>
+              <hr className="border-white/10 my-2" />
+              <a href="https://calendar.zanzibar.center" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-text-secondary hover:text-white hover:bg-white/5 transition-all">
+                📅 Calendar
+              </a>
+              <a href="https://zanzibar.camp" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-text-secondary hover:text-white hover:bg-white/5 transition-all">
+                🏕️ Children's Camps
+              </a>
+              <a href="https://zanzibar.center" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-text-secondary hover:text-white hover:bg-white/5 transition-all">
+                🏫 Learning Village
+              </a>
             </div>
           </div>
 
@@ -76,7 +86,7 @@ export default function TopNavigation() {
       <motion.nav className="lg:hidden glass-effect px-4 py-3 flex items-center justify-between sticky top-0 z-40">
         <Link to="/" className="flex items-center gap-2">
           <Gamepad2 size={22} className="text-island-blue" />
-          <span className="font-bold text-island-blue">Smart Island</span>
+          <span className="font-bold text-island-blue">Zanzibar.Center</span>
         </Link>
         <div className="flex items-center gap-2">
           <span className="text-sm font-semibold">Lv.{level}</span>
@@ -112,7 +122,7 @@ export default function TopNavigation() {
             className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-left mb-1"
           >
             <span>🤖</span>
-            <span>Island Guide AI</span>
+            <span>Guide AI</span>
           </button>
           <Link
             to="/parent"
@@ -130,6 +140,34 @@ export default function TopNavigation() {
             <span>🍎</span>
             <span>Teacher Portal</span>
           </Link>
+          <hr className="border-white/10 my-4" />
+          <a
+            href="https://calendar.zanzibar.center"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 hover:bg-white/10 text-text-secondary"
+          >
+            <span>📅</span>
+            <span>Calendar</span>
+          </a>
+          <a
+            href="https://zanzibar.camp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 hover:bg-white/10 text-text-secondary"
+          >
+            <span>🏕️</span>
+            <span>Children's Camps</span>
+          </a>
+          <a
+            href="https://zanzibar.center"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 hover:bg-white/10 text-text-secondary"
+          >
+            <span>🏫</span>
+            <span>Learning Village</span>
+          </a>
         </motion.div>
       )}
     </>

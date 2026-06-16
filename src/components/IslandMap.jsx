@@ -28,7 +28,7 @@ export default function IslandMap({ buildings = [], onRemoveBuilding, onDropBuil
           : 'bg-white bg-opacity-5 border-island-blue border-opacity-20 hover:border-island-blue/30 shadow-soft'
       }`}
       role="application"
-      aria-label="Smart Island map canvas"
+      aria-label="Zanzibar.Center island map canvas"
       tabIndex={0}
       onDragEnter={() => setIsDragOver(true)}
       onDragLeave={() => setIsDragOver(false)}

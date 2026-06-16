@@ -1,18 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion'
 import { Link, useNavigate } from 'react-router-dom'
-import {
-  ArrowRight,
-  Sparkles,
-  Play,
-  X,
-  Menu,
-  ChevronDown,
-  Users,
-  BookOpen,
-  Clock,
-  CheckCircle2,
-} from 'lucide-react'
+import { ArrowRight, Sparkles, Play, X, Menu, ChevronDown, Users, BookOpen, Clock, CircleCheck as CheckCircle2 } from 'lucide-react'
 
 const STATS = [
   { label: 'Kids Playing', value: 80, suffix: 'K+', icon: Users },
@@ -82,6 +71,8 @@ const NAV_LINKS = [
   { label: 'Features', href: '#features' },
   { label: 'Path', href: '#path' },
   { label: 'Demo', href: '#demo' },
+  { label: 'Village', href: '/camp' },
+  { label: 'Calendar', href: 'https://calendar.zanzibar.center', external: true },
 ]
 
 function AnimatedCounter({ target, suffix, duration = 2000 }) {
@@ -162,19 +153,39 @@ function LandingNav({ scrolled }) {
             🏝️
           </motion.span>
           <span className="text-lg md:text-xl font-bold text-island-blue group-hover:text-tropical-green transition-colors">
-            Smart Island
+            Zanzibar.Center
           </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="text-sm text-text-secondary hover:text-island-blue transition-colors font-medium"
-            >
-              {link.label}
-            </button>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-text-secondary hover:text-island-blue transition-colors font-medium"
+              >
+                {link.label}
+              </a>
+            ) : link.href.startsWith('#') ? (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className="text-sm text-text-secondary hover:text-island-blue transition-colors font-medium"
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm text-text-secondary hover:text-island-blue transition-colors font-medium"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
           <Link
             to="/hub"
@@ -204,13 +215,35 @@ function LandingNav({ scrolled }) {
           >
             <div className="px-4 py-4 flex flex-col gap-3">
               {NAV_LINKS.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className="text-left py-2 text-text-secondary hover:text-island-blue transition-colors"
-                >
-                  {link.label}
-                </button>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-left py-2 text-text-secondary hover:text-island-blue transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : link.href.startsWith('#') ? (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollTo(link.href)}
+                    className="text-left py-2 text-text-secondary hover:text-island-blue transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-left py-2 text-text-secondary hover:text-island-blue transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
               <Link
                 to="/hub"
@@ -510,7 +543,7 @@ export default function LandingPage() {
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              <span className="text-shine">Smart Island</span>
+              <span className="text-shine">Zanzibar.Center</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-2xl text-text-secondary mb-2 md:mb-4 leading-relaxed max-w-3xl mx-auto px-2">
@@ -732,12 +765,29 @@ export default function LandingPage() {
           </motion.div>
 
           <footer className="mt-12 md:mt-16 pt-8 border-t border-white/10 text-text-secondary text-sm">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span>🏝️</span>
-                <span className="font-semibold text-island-blue">Smart Island</span>
+            <div className="flex flex-col gap-6">
+              {/* External Links Row */}
+              <div className="flex flex-wrap justify-center gap-4 text-xs">
+                <a href="https://calendar.zanzibar.center" target="_blank" rel="noopener noreferrer" className="hover:text-island-blue transition-colors">
+                  📅 Calendar
+                </a>
+                <a href="https://zanzibar.camp" target="_blank" rel="noopener noreferrer" className="hover:text-island-blue transition-colors">
+                  🏕️ Children's Camps
+                </a>
+                <a href="https://zanzibar.center" target="_blank" rel="noopener noreferrer" className="hover:text-island-blue transition-colors">
+                  🏫 Learning Village
+                </a>
+                <a href="https://zanzibar.center/courses-for-adults" target="_blank" rel="noopener noreferrer" className="hover:text-island-blue transition-colors">
+                  👨‍🎓 Adult Courses
+                </a>
               </div>
-              <p>© {new Date().getFullYear()} Smart Island Experience Hub — play, build & learn React worldwide.</p>
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <span>🏝️</span>
+                  <span className="font-semibold text-island-blue">Zanzibar.Center</span>
+                </div>
+                <p className="text-center">© {new Date().getFullYear()} Zanzibar.Center Experience Hub — play, build & learn React worldwide.</p>
+              </div>
             </div>
           </footer>
         </div>

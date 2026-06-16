@@ -21,8 +21,8 @@ function downloadTextFile(filename, content) {
 export default function ParentDashboardPage() {
   const exportSummary = () => {
     downloadTextFile(
-      'smart-island-parent-summary.txt',
-      ['Smart Island Parent Summary', '', 'Child: Explorer', 'Weekly progress: 82%', 'Missions completed: 3', 'Teacher comments: Strong progress in logic and sustainability'].join('\n')
+      'zanzibar-center-parent-summary.txt',
+      ['Zanzibar.Center Parent Summary', '', 'Child: Explorer', 'Weekly progress: 82%', 'Missions completed: 3', 'Teacher comments: Strong progress in logic and sustainability'].join('\n')
     )
   }
 

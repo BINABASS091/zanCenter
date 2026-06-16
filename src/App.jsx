@@ -79,7 +79,7 @@ function LoadingScreen() {
       <div className="text-center">
         <div className="mb-8 animate-bounce-in">
           <div className="text-6xl mb-4">🏝️</div>
-          <h1 className="text-4xl font-bold text-island-blue mb-4">Smart Island</h1>
+          <h1 className="text-4xl font-bold text-island-blue mb-4">Zanzibar.Center</h1>
           <p className="text-text-secondary text-lg">Loading Experience Hub...</p>
         </div>
         <div className="mt-12 flex gap-2 justify-center">

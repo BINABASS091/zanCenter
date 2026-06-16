@@ -36,7 +36,7 @@ export default function AgeModeSelector() {
               >
                 🏝️
               </motion.span>
-              <h2 className="text-2xl md:text-4xl font-bold mb-2">Welcome to Experience Hub</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-2">Welcome to Zanzibar.Center</h2>
               <p className="text-text-secondary">Choose how you play — games for kids, React for web builders</p>
             </div>
 
