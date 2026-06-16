@@ -11,6 +11,8 @@ const PortfolioPage = lazy(() => import('../pages/PortfolioPage'))
 const ProfilePage = lazy(() => import('../pages/ProfilePage'))
 const ParentDashboardPage = lazy(() => import('../pages/ParentDashboardPage'))
 const TeacherDashboardPage = lazy(() => import('../pages/TeacherDashboardPage'))
+const LearningZonePage = lazy(() => import('../pages/LearningZonePage'))
+const CampInfoPage = lazy(() => import('../pages/CampInfoPage'))
 
 function RouteFallback() {
   return (
@@ -32,7 +34,8 @@ export default function AppRoutes() {
         <Route path="/hub" element={<GameHubPage />} />
         <Route path="/island" element={<IslandMapPage />} />
         <Route path="/react-course" element={<ReactCoursePage />} />
-        <Route path="/learning" element={<Navigate to="/react-course" replace />} />
+        <Route path="/learning" element={<LearningZonePage />} />
+        <Route path="/camp" element={<CampInfoPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/profile" element={<ProfilePage />} />

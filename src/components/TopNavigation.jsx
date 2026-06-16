@@ -5,12 +5,13 @@ import { Menu, X, Gamepad2 } from 'lucide-react'
 import { useState } from 'react'
 
 const NAV_ITEMS = [
+  { to: '/camp', label: 'Camp', icon: '🏕️' },
+  { to: '/learning', label: 'Courses', icon: '📚' },
   { to: '/hub', label: 'Play', icon: '🎮' },
   { to: '/island', label: 'Build', icon: '🏗️' },
   { to: '/react-course', label: 'React', icon: '⚛️' },
   { to: '/explore', label: 'Explore', icon: '🗺️' },
   { to: '/portfolio', label: 'Portfolio', icon: '📂' },
-  { to: '/dashboard', label: 'Hub', icon: '📊' },
 ]
 
 export default function TopNavigation() {
