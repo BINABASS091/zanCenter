@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useUIStore, useGameStore } from '../store/gameStore'
-import { Menu, X, Gamepad2 } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+
+const LOGO_SRC = '/zanzibar.Camp_logo.png'
 
 const NAV_ITEMS = [
   { to: '/camp', label: 'Camp', icon: '🏕️' },
@@ -28,10 +30,8 @@ export default function TopNavigation() {
         className="hidden lg:flex items-center justify-between sticky top-0 z-40 glass-effect px-6 xl:px-8 py-3 backdrop-blur-xl"
       >
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <span className="text-2xl">🏝️</span>
-          <div>
-            <h1 className="text-lg font-bold text-island-blue leading-tight">Zanzibar.Center</h1>
-            <p className="text-[10px] text-text-secondary">Experience Hub</p>
+          <div className="bg-white rounded-xl px-2 py-1 shadow-soft">
+            <img src={LOGO_SRC} alt="Zanzibar.Camp" className="h-9 w-auto object-contain" />
           </div>
         </Link>
 
@@ -83,10 +83,11 @@ export default function TopNavigation() {
         </div>
       </motion.nav>
 
-      <motion.nav className="lg:hidden glass-effect px-4 py-3 flex items-center justify-between sticky top-0 z-40">
+      <motion.nav className="lg:hidden glass-effect px-4 py-2 flex items-center justify-between sticky top-0 z-40">
         <Link to="/" className="flex items-center gap-2">
-          <Gamepad2 size={22} className="text-island-blue" />
-          <span className="font-bold text-island-blue">Zanzibar.Center</span>
+          <div className="bg-white rounded-lg px-1.5 py-0.5">
+            <img src={LOGO_SRC} alt="Zanzibar.Camp" className="h-8 w-auto object-contain" />
+          </div>
         </Link>
         <div className="flex items-center gap-2">
           <span className="text-sm font-semibold">Lv.{level}</span>
@@ -102,7 +103,12 @@ export default function TopNavigation() {
           animate={{ x: 0 }}
           className="lg:hidden fixed left-0 top-14 h-[calc(100vh-3.5rem)] w-72 glass-effect z-30 p-4 overflow-y-auto border-r border-white/10"
         >
-          <p className="text-xs text-text-secondary px-3 mb-3">Hi, {userName}! 🌍</p>
+          <div className="px-3 mb-4">
+            <div className="bg-white rounded-xl p-2 inline-block mb-2">
+              <img src={LOGO_SRC} alt="Zanzibar.Camp" className="h-10 w-auto object-contain" />
+            </div>
+            <p className="text-xs text-text-secondary">Hi, {userName}! 🌍</p>
+          </div>
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.to}

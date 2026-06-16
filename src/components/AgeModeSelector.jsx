@@ -29,13 +29,15 @@ export default function AgeModeSelector() {
         >
           <div className="landing-gradient-border-inner p-6 md:p-10 max-h-[90vh] overflow-y-auto">
             <div className="text-center mb-8">
-              <motion.span
-                className="text-5xl md:text-6xl block mb-4"
-                animate={{ y: [0, -8, 0] }}
+              <motion.div
+                className="flex justify-center mb-5"
+                animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                🏝️
-              </motion.span>
+                <div className="bg-white rounded-2xl px-6 py-4 shadow-premium inline-block">
+                  <img src="/zanzibar.Camp_logo.png" alt="Zanzibar.Camp" className="h-16 w-auto object-contain" />
+                </div>
+              </motion.div>
               <h2 className="text-2xl md:text-4xl font-bold mb-2">Welcome to Zanzibar.Center</h2>
               <p className="text-text-secondary">Choose how you play — games for kids, React for web builders</p>
             </div>
