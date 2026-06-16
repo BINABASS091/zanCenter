@@ -15,6 +15,7 @@ export default function IslandMapPage() {
     placeBuilding,
     removeBuilding,
     moveBuilding,
+    upgradeBuilding,
     completedMissions,
     unlockedAchievements,
     resetGame,
@@ -33,6 +34,28 @@ export default function IslandMapPage() {
 
   const handleClearBuilding = (buildingId) => {
     removeBuilding(buildingId)
+  }
+
+  const handleUpgradeBuilding = (buildingId) => {
+    const building = placedBuildings.find((b) => b.id === buildingId)
+    if (!building) return
+    const catalog = buildingCatalog.find((b) => b.type === building.type)
+    const maxLevel = catalog?.maxLevel || 3
+    const currentLevel = building.level || 1
+    const cost = catalog?.upgradeCost || 100
+
+    if (currentLevel >= maxLevel) {
+      addNotification({ type: 'info', title: 'Max level reached', message: `${building.name} is already at Level ${maxLevel}!` })
+      return
+    }
+
+    if (gold < cost) {
+      addNotification({ type: 'error', title: 'Not enough gold', message: `Upgrading to Level ${currentLevel + 1} requires ${cost} gold.` })
+      return
+    }
+
+    upgradeBuilding(buildingId)
+    addNotification({ type: 'success', title: 'Building upgraded!', message: `${building.name} upgraded to Level ${currentLevel + 1} for ${cost} gold! 🚀` })
   }
 
   const handleDropBuilding = (payload, position) => {
@@ -136,6 +159,7 @@ export default function IslandMapPage() {
               onRemoveBuilding={handleClearBuilding}
               onDropBuilding={handleDropBuilding}
               onMoveBuilding={moveBuilding}
+              onUpgradeBuilding={handleUpgradeBuilding}
             />
 
             {/* Info */}

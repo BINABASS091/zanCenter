@@ -258,7 +258,19 @@ export const useGameStore = create(
         })
       }),
 
-      hydrateProgress: () => set((state) => withProgression(state)),
+      hydrateProgress: () => set((state) => {
+        let onboardingComplete = state.onboardingComplete
+        let ageMode = state.ageMode
+        if (!onboardingComplete && (state.buildings?.length > 0 || state.totalXP > 0)) {
+          onboardingComplete = true
+          if (!ageMode) ageMode = 'creator'
+        }
+        return withProgression({
+          ...state,
+          onboardingComplete,
+          ageMode,
+        })
+      }),
     }),
     {
       name: 'smart-island-progress',
@@ -293,10 +305,6 @@ export const useGameStore = create(
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {
-          if (!state.onboardingComplete && (state.buildings?.length > 0 || state.totalXP > 0)) {
-            state.onboardingComplete = true
-            if (!state.ageMode) state.ageMode = 'creator'
-          }
           state.hydrateProgress?.()
         }
       },

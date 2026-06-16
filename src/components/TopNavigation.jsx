@@ -48,6 +48,23 @@ export default function TopNavigation() {
             <span>🤖</span>
             <span className="hidden xl:inline">Guide</span>
           </button>
+
+          {/* Portals Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/10 transition-all text-sm">
+              <span>🏫</span>
+              <span className="hidden xl:inline">Portals</span>
+            </button>
+            <div className="absolute right-0 mt-2 w-48 rounded-xl glass-effect bg-ocean-surface border border-white/10 shadow-premium opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 py-2 z-50">
+              <Link to="/parent" className="block px-4 py-2 text-sm text-text-secondary hover:text-white hover:bg-white/5 transition-all">
+                👨‍👩‍👦 Parent Portal
+              </Link>
+              <Link to="/teacher" className="block px-4 py-2 text-sm text-text-secondary hover:text-white hover:bg-white/5 transition-all">
+                🍎 Teacher Portal
+              </Link>
+            </div>
+          </div>
+
           <Link to="/profile" className="flex items-center gap-2 glass-effect px-3 py-2 rounded-xl hover:border-island-blue/30 transition-all">
             <span>⭐</span>
             <span className="font-semibold text-sm">Lv.{level}</span>
@@ -91,11 +108,27 @@ export default function TopNavigation() {
           <hr className="border-white/10 my-4" />
           <button
             onClick={() => { toggleAICoach(); setSidebarOpen(false) }}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 text-left mb-1"
           >
             <span>🤖</span>
             <span>Island Guide AI</span>
           </button>
+          <Link
+            to="/parent"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 hover:bg-white/10 text-text-secondary"
+          >
+            <span>👨‍👩‍👦</span>
+            <span>Parent Portal</span>
+          </Link>
+          <Link
+            to="/teacher"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 hover:bg-white/10 text-text-secondary"
+          >
+            <span>🍎</span>
+            <span>Teacher Portal</span>
+          </Link>
         </motion.div>
       )}
     </>

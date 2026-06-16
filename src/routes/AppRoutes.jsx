@@ -9,6 +9,8 @@ const ReactCoursePage = lazy(() => import('../pages/ReactCoursePage'))
 const ExplorePage = lazy(() => import('../pages/ExplorePage'))
 const PortfolioPage = lazy(() => import('../pages/PortfolioPage'))
 const ProfilePage = lazy(() => import('../pages/ProfilePage'))
+const ParentDashboardPage = lazy(() => import('../pages/ParentDashboardPage'))
+const TeacherDashboardPage = lazy(() => import('../pages/TeacherDashboardPage'))
 
 function RouteFallback() {
   return (
@@ -34,6 +36,8 @@ export default function AppRoutes() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/parent" element={<ParentDashboardPage />} />
+        <Route path="/teacher" element={<TeacherDashboardPage />} />
       </Routes>
     </Suspense>
   )
